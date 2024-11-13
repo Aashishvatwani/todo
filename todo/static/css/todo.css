@@ -1,0 +1,140 @@
+/* Reset and base styling */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container for the login box */
+.signup-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.signup-box {
+    background-color: #1f1f1f;
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    text-align: center;
+}
+
+/* Heading styling */
+.heading {
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Signout icon in the top right */
+.fa-right-from-bracket {
+    color: #ff4d4d;
+    font-size: 20px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.fa-right-from-bracket:hover {
+    color: #ff1a1a;
+}
+
+/* Line separator */
+.line {
+    width: 50px;
+    height: 3px;
+    background-color: #6200ea;
+    margin: 10px auto 20px auto;
+    border-radius: 3px;
+}
+
+/* Form fields */
+.field {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.field b {
+    color: #b3b3b3;
+}
+
+.inp {
+    width: 100%;
+    padding: 12px 10px;
+    margin-top: 5px;
+    background-color: #2a2a2a;
+    border: none;
+    border-radius: 5px;
+    color: #e0e0e0;
+    outline: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.inp:focus {
+    background-color: #333;
+}
+
+/* Add spacing between title input and submit button */
+.inp[name="title"] {
+    margin-bottom: 200px; /* Ensures a minimum of 200px space */
+}
+
+/* Submit button */
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #6200ea;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #5300d6;
+}
+
+/* Signup link styling */
+.anc {
+    color: #6200ea;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.anc:hover {
+    color: #bb86fc;
+}
+
+.field b, .field a {
+    color: #e0e0e0;
+    text-align: center;
+    display: block;
+}
+/* Updated .todo styling to match the theme and layout requirements */

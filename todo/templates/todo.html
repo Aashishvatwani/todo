@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link rel="stylesheet" href="{% static 'css/todo.css' %}"> <!-- Example CSS file -->
+    <script src="https://kit.fontawesome.com/cb792c0850.js" crossorigin="anonymous"></script>
+    <style>.todo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #2a2a2a;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s;
+    }
+    
+    .todo:hover {
+        background-color: #333;
+    }
+    
+    /* Styling for srno and title */
+    .todo h5 {
+        color: #bb86fc;
+        font-size: 16px;
+        margin-right: 15px;
+    }
+    
+    .todo p {
+        color: #e0e0e0;
+        font-size: 16px;
+        flex-grow: 1; /* Ensures the title takes up available space */
+        margin: 0 15px;
+    }
+    
+    /* Action icons (edit and delete) styling */
+    .todo div a {
+        color: #ff4d4d;
+        font-size: 18px;
+        margin-left: 10px;
+        transition: color 0.2s;
+    }
+    
+    .todo div a:hover {
+        color: #ff1a1a;
+    }
+    .anca {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .anca a {
+            color: #ff4d4d;
+            font-size: 20px;
+            transition: color 0.2s;
+        }
+
+        .anca a:hover {
+            color: #ff1a1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-login">
+        <div class="signup-box">
+            <div class="heading">
+                Get Things Done
+            </div>
+           <div class="anca">
+            <a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i></a>
+           </div> 
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" class="inp" name="title" required placeholder="Add Today's Task">
+                <input type="submit" class="submit-button" value="Add Task">
+
+              
+              
+            </form>
+            {%for todo in res %}
+            <div class="todo">
+                <h5>{{todo.srno}}</h5>
+                <p>{{todo.title}}</p>
+                <div>
+                    <a href="/edit_todo/{{todo.srno}}"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="/delete_todo/{{todo.srno}}"><i class= "fa-solid fa-trash"></i></a>
+                </div>
+               
+            </div>
+            {%endfor%}
+           
+        </div>
+    </div>
+</body>
+</html>
